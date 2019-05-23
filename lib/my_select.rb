@@ -5,10 +5,7 @@ def my_select(collection)
    new_collection = []
    i = 0 
    while i < collection.length 
-    if collection[i] == true 
-      new_collection << yield(collection[i])
-    else 
-    end 
+    new_collection << yield(collection[i])
     i += 1
     #do stuff that will return the elements being passed through a block if they evaluate true to the block. 
    end 
