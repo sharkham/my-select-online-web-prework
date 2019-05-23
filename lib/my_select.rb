@@ -5,9 +5,12 @@ def my_select(collection)
    new_collection = []
    i = 0 
    while i < collection.length 
-    new_collection << yield(collection[i])
+    new_collection << collection[i] if (yield(collection[i]) == true)
+    #new_collection << yield(collection[i])
     i += 1
     #do stuff that will return the elements being passed through a block if they evaluate true to the block. 
+    #the return value of yield here is true/false, and I want to get at the thing that's making it evaluate true/false.
+    # for each yield(collection[i]) that is true, I want collection[i]
    end 
    new_collection
  end 
